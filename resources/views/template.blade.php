@@ -16,18 +16,21 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <link rel="icon" href="favicon.ico" type="image/x-icon">
+    
     <!-- VENDOR CSS -->
-    <link rel="stylesheet" href="{{asset('assets/vendor/bootstrap/css/bootstrap.min.css')}}">
-    <link rel="stylesheet" href="{{asset('assets/vendor/font-awesome/css/font-awesome.min.css')}}">
-
+    <link rel="stylesheet" href="{{URL::asset('assets/vendor/bootstrap/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{URL::asset('assets/vendor/font-awesome/css/font-awesome.min.css')}}">
+    
     <!-- MAIN CSS -->
-    <link rel="stylesheet" href="{{asset('assets/css/main.css')}}">
-    <link rel="stylesheet" href="{{asset('assets/css/color_skins.css')}}">
-
+    <link rel="stylesheet" href="{{URL::asset('assets/css/main.css')}}">
+    <link rel="stylesheet" href="{{URL::asset('assets/css/color_skins.css')}}">
+    
     {{-- cdn datatables --}}
     <link rel="stylesheet" href="https://cdn.datatables.net/2.0.3/css/dataTables.dataTables.css" />
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet"  type='text/css'>
 
-</head>
+</head> 
+
 <body class="theme-cyan">
 
 <!-- Page Loader -->
@@ -48,7 +51,7 @@
             </div>
 
             <div class="navbar-brand">
-                <a href="index.html"><img src="../assets/images/logo.svg" alt="Lucid Logo" class="img-responsive logo"></a>                
+                <a href="index.html"><img src="{{asset('/assets/images/logo.svg')}}" alt="Lucid Logo" class="img-responsive logo"></a>                
             </div>
             
             <div class="navbar-right">
@@ -59,20 +62,8 @@
 
                 <div id="navbar-menu">
                     <ul class="nav navbar-nav">
-                        
-                        <li class="dropdown">
-                            <a href="javascript:void(0);" class="dropdown-toggle icon-menu" data-toggle="dropdown">
-                                <i class="icon-bell"></i>
-                                <span class="notification-dot"></span>
-                            </a>
-                            <ul class="dropdown-menu notifications">
-                            
-                                <li class="footer"><a href="javascript:void(0);" class="more">See all notifications</a></li>
-                            </ul>
-                        </li>
-                        
                         <li>
-                            <a href="page-login.html" class="icon-menu"><i class="icon-login"></i></a>
+                            <a href="{{url('/')}}" class="icon-menu"><i class="icon-login"></i></a>
                         </li>
                     </ul>
                 </div>
@@ -91,16 +82,29 @@
 
 
 
-<script src="{{asset('assets/bundles/vendorscripts.bundle.js')}}"></script>
-<script src="{{asset('assets/bundles/libscripts.bundle.js')}}"></script>    
+<script src="{{URL::asset('assets/vendor/jquery/jquery.js')}}"></script>
+<script src="{{URL::asset('assets/vendor/bootstrap/js/bootstrap.js')}}"></script>
+<script src="{{URL::asset('assets/vendor/bootstrap/js/popper.min.js')}}"></script>
+<script src="{{URL::asset('assets/vendor/metisMenu/metisMenu.js')}}"></script>
+<script src="{{URL::asset('assets/vendor/jquery-slimscroll/jquery.slimscroll.js')}}"></script>
 
-<script src="{{asset('assets/bundles/mainscripts.bundle.js')}}"></script>
+<script src="{{URL::asset('assets/bundles/libscripts.bundle.js')}}"></script>    
+<script src="{{URL::asset('assets/bundles/vendorscripts.bundle.js')}}"></script>
+
+<script src="{{URL::asset('assets/bundles/mainscripts.bundle.js')}}"></script>
+
+{{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> --}}
+<script src="https://cdn.datatables.net/2.0.3/js/dataTables.js"></script>
+
+{{-- <script src="{{asset('js/script.js')}}"></script> --}}
 {{-- <script>
     $('.sparkbar').sparkline('html', { type: 'bar' });
 </script> --}}
 
-</body>
+
 
 @stack('js')
+</body>
+
 
 </html>

@@ -22,13 +22,14 @@
                                '<input class="select-row" type="checkbox" name="row-checkbox">' +
                                '<span></span>' +
                            '</label>';
+                    // return meta.row+1;
                 }
             },
             {data: 'name', name: 'name'},
             {data: 'address', name: 'address'},
             {data: 'action', name: 'action'}
         ]
-            
+          
         })
     }
 

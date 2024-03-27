@@ -2,7 +2,7 @@
 <div id="left-sidebar" class="sidebar">
     <div class="sidebar-scroll">
         <div class="user-account">
-            <img src="../assets/images/user.png" class="rounded-circle user-photo" alt="User Profile Picture">
+            <img src="{{asset('/assets/images/user.png')}}" class="rounded-circle user-photo" alt="User Profile Picture">
             <div class="dropdown">
                 <span>Welcome,</span>
                 <a href="javascript:void(0);" class="dropdown-toggle user-name" data-toggle="dropdown"><strong>Alizee Thomas</strong></a>
@@ -11,7 +11,7 @@
                     <li><a href="app-inbox.html"><i class="icon-envelope-open"></i>Messages</a></li>
                     <li><a href="javascript:void(0);"><i class="icon-settings"></i>Settings</a></li>
                     <li class="divider"></li>
-                    <li><a href="page-login.html"><i class="icon-power"></i>Logout</a></li>
+                    <li><a href="{{url('login')}}"><i class="icon-power"></i>Logout</a></li>
                 </ul>
             </div>
             <hr>
@@ -30,8 +30,8 @@
             <div class="tab-pane active" id="menu">
                 <nav id="left-sidebar-nav" class="sidebar-nav">
 
-                     @yield('tab')
-                     
+                    @yield('tab')
+
                 </nav>
             </div>
 

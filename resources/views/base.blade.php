@@ -5,23 +5,20 @@
 @section('content')
 
     @section('tab')
-
-    <ul id="main-menu" class="metismenu">                            
-        <li>
-            <a href="#Dashboard" class="has-arrow"><i class="icon-home"></i> <span>Dashboard</span></a>
-            <ul>
-                <li class=""><a href="{{url('/dashboard')}}">Dashboard</a></li>         
-            </ul>
-        </li>
-        <li>
-            <a href="#App" class="has-arrow"><i class="icon-grid"></i> <span>Pegawai</span></a>
-            <ul>
-                <li class="active"><a href="{{url('/pegawai')}}">Table Pegawai</a></li>
-                <li class=""><a href="{{url('')}}">Table 2 </a></li>
-            </ul>
-        </li>
-        
-    </ul>
+        <ul id="main-menu" class="metismenu">                            
+            <li>
+                <a href="#Dashboard" class="has-arrow"><i class="icon-home"></i> <span>Dashboard</span></a>
+                <ul>
+                    <li></li><a href="{{url('/')}}">Dashboard</a></li>     
+                </ul>
+            </li>
+            <li>
+                <a href="#App" class="has-arrow"><i class="icon-grid"></i> <span>Pegawai</span></a>
+                <ul>
+                    <li class="active"><a href="{{url('/pegawai')}}">Data Table</a></li>
+                </ul>
+            </li>
+        </ul>
     @endsection
 
 {{-- main content --}}
@@ -35,10 +32,11 @@
                     <h2><a href="javascript:void(0);" class="btn btn-xs btn-link btn-toggle-fullwidth"><i class="fa fa-arrow-left"></i></a> Data Table</h2>
                     <ul class="breadcrumb">
                         <li class="breadcrumb-item"><a href="index.html"><i class="icon-home"></i></a></li>                            
-                        <li class="breadcrumb-item">Table Pegawai</li>
+                        <li class="breadcrumb-item">Data Table</li>
                         
                     </ul>
-                </div>           
+                </div>            
+                
             </div>
         </div>
 
@@ -130,9 +128,10 @@
 {{-- end div main-content --}}
 </div>
 
-
 @push('js')
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://cdn.datatables.net/2.0.3/js/dataTables.js"></script>
 
 
 @include('partial.script')
